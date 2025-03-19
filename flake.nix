@@ -25,7 +25,7 @@
     in
     {
       nixosModules = {
-        wrapper = ./modules/sops;
+        wrapper = ./modules/wrapper;
         default = self.nixosModules.wrapper;
       };
       devShells = forAllSystems (pkgs: {
