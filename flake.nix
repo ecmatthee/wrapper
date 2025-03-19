@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs@{ nixpkgs,  ... }:
+  outputs = inputs@{ self, nixpkgs,  ... }:
     let
       forAllSystems = function:
         nixpkgs.lib.genAttrs [
