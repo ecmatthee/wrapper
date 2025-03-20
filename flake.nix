@@ -24,10 +24,7 @@
       ]);
     in
     {
-      nixosModules = {
-        wrapper = ./modules/wrapper;
-        default = self.nixosModules.wrapper;
-      };
+      nixosModule = import ./modules/wrapper self;
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
           packages = devDeps ++ buildDeps ++ runtimeDeps;
