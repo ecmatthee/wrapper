@@ -28,7 +28,7 @@ let
       #postBuild = {};
       #pathAdd = {};
 
-      wrapped = mkOption {
+      wrapped = lib.mkOption {
         type = with lib.types; package;
         readOnly = true;
         description = ''
@@ -54,7 +54,7 @@ let
 in
 {
   options = {
-    wrappers = mkOption {
+    wrappers = lib.mkOption {
       type = with types; attrsOf (submodule wrapperOptions);
       default = {};
       description = ''
