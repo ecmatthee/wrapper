@@ -55,7 +55,7 @@ in
 {
   options = {
     wrappers = lib.mkOption {
-      type = with types; attrsOf (submodule wrapperOptions);
+      type = with lib.types; attrsOf (submodule wrapperOptions);
       default = {};
       description = ''
         Wrapper configuration. See the suboptions for configuration.
